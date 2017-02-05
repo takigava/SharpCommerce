@@ -86,7 +86,7 @@ namespace SharpCommerce
                     }
                     catch (FileLoadException ex)
                     {
-                        if (ex.Message == "Assembly with same name is already loaded")
+                        if (ex.Message == "Assembly with same name is already loaded!")
                         {
                             continue;
                         }
