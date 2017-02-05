@@ -1,0 +1,66 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{884CB110-085C-4D99-8639-A06F64344921}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED57335A-ABE5-4407-B02D-AE592C3131D1}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpCommerce", "src\SharpCommerce\SharpCommerce.xproj", "{4C842281-F7EC-4605-AB81-7B12BB3F3D9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8FE900AC-F617-4ED8-9E52-7E0F0F85BE36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{590AFCBE-6A56-48FD-AB05-EA99FD93B5A8}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpCommerce.Core", "SharpCommerce.Core\SharpCommerce.Core.xproj", "{843966E3-1AAE-4545-AF0A-B68EC616E347}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpCommerce.Core.Contracts", "SharpCommerce.Core.Contracts\SharpCommerce.Core.Contracts.xproj", "{1054D8F2-D9D3-433B-AE86-01CD87149337}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpCommerce.Modules.Admin", "src\SharpCommerce\Modules\SharpCommerce.Modules.Admin\SharpCommerce.Modules.Admin.xproj", "{13AD5DB8-4C3F-41D9-93A0-B31A5D679FAB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpCommerce.Modules.Account", "src\SharpCommerce\Modules\SharpCommerce.Modules.Account\SharpCommerce.Modules.Account.xproj", "{37CCEAF5-B869-49BC-B7A9-071F89F4D424}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C842281-F7EC-4605-AB81-7B12BB3F3D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C842281-F7EC-4605-AB81-7B12BB3F3D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C842281-F7EC-4605-AB81-7B12BB3F3D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C842281-F7EC-4605-AB81-7B12BB3F3D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843966E3-1AAE-4545-AF0A-B68EC616E347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843966E3-1AAE-4545-AF0A-B68EC616E347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843966E3-1AAE-4545-AF0A-B68EC616E347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843966E3-1AAE-4545-AF0A-B68EC616E347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1054D8F2-D9D3-433B-AE86-01CD87149337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1054D8F2-D9D3-433B-AE86-01CD87149337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1054D8F2-D9D3-433B-AE86-01CD87149337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1054D8F2-D9D3-433B-AE86-01CD87149337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13AD5DB8-4C3F-41D9-93A0-B31A5D679FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AD5DB8-4C3F-41D9-93A0-B31A5D679FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AD5DB8-4C3F-41D9-93A0-B31A5D679FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13AD5DB8-4C3F-41D9-93A0-B31A5D679FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37CCEAF5-B869-49BC-B7A9-071F89F4D424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CCEAF5-B869-49BC-B7A9-071F89F4D424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CCEAF5-B869-49BC-B7A9-071F89F4D424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CCEAF5-B869-49BC-B7A9-071F89F4D424}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C842281-F7EC-4605-AB81-7B12BB3F3D9C} = {884CB110-085C-4D99-8639-A06F64344921}
+		{8FE900AC-F617-4ED8-9E52-7E0F0F85BE36} = {884CB110-085C-4D99-8639-A06F64344921}
+		{590AFCBE-6A56-48FD-AB05-EA99FD93B5A8} = {884CB110-085C-4D99-8639-A06F64344921}
+		{843966E3-1AAE-4545-AF0A-B68EC616E347} = {8FE900AC-F617-4ED8-9E52-7E0F0F85BE36}
+		{1054D8F2-D9D3-433B-AE86-01CD87149337} = {8FE900AC-F617-4ED8-9E52-7E0F0F85BE36}
+		{13AD5DB8-4C3F-41D9-93A0-B31A5D679FAB} = {590AFCBE-6A56-48FD-AB05-EA99FD93B5A8}
+		{37CCEAF5-B869-49BC-B7A9-071F89F4D424} = {590AFCBE-6A56-48FD-AB05-EA99FD93B5A8}
+	EndGlobalSection
+EndGlobal
