@@ -68,10 +68,18 @@ namespace SharpCommerce
                 options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
             });
 
-            var moduleRootFolder = _hostingEnvironment.ContentRootFileProvider.GetDirectoryContents("/Modules");
-            foreach (var moduleFolder in moduleRootFolder.Where(x => x.IsDirectory))
+            //var moduleRootFolder = _hostingEnvironment.ContentRootFileProvider.GetDirectoryContents("/Modules");
+            string moduleRootFolder = (Directory.GetParent(Directory.GetParent(_hostingEnvironment.ContentRootPath).FullName).FullName);
+
+            foreach (var moduleFolder in Directory.GetDirectories(moduleRootFolder))
             {
-                var binFolder = new DirectoryInfo(Path.Combine(moduleFolder.PhysicalPath, "bin"));
+                if(moduleFolder.Contains(".git") || moduleFolder.Contains(".vs") || moduleFolder.Contains(".vscode") || moduleFolder.Contains("src") || !moduleFolder.Contains("Modules"))
+                {
+                    continue;
+                }
+
+                var binFolder = new DirectoryInfo(Path.Combine(moduleFolder, "bin"));
+                
                 if (!binFolder.Exists)
                 {
                     continue;
@@ -79,6 +87,12 @@ namespace SharpCommerce
 
                 foreach (var file in binFolder.GetFileSystemInfos("*.dll", SearchOption.AllDirectories))
                 {
+                    var name = Directory.GetParent(file.FullName).Parent.Parent.Parent.Name;
+                    if (!file.Name.Contains(name))
+                    {
+                        continue;
+                    }
+
                     Assembly assembly;
                     try
                     {
@@ -94,10 +108,10 @@ namespace SharpCommerce
                     }
 
 
-                    if (assembly.FullName.Contains(moduleFolder.Name))
-                    {
-                        modules.Add(new ModuleInfo { Name = moduleFolder.Name, Assembly = assembly, Path = moduleFolder.PhysicalPath });
-                    }
+                    //if (assembly.FullName.Contains(moduleFolder))
+                    //{
+                        modules.Add(new ModuleInfo { Name = moduleFolder, Assembly = assembly, Path = file.FullName });
+                    //}
                 }
             }
 
@@ -107,7 +121,7 @@ namespace SharpCommerce
                 {
                     o.AdditionalCompilationReferences.Add(MetadataReference.CreateFromFile(module.Assembly.Location));
                 }
-            }).AddControllersAsServices();
+            });
             var moduleInitializerInterface = typeof(IModuleInitializer);
             foreach (var module in modules)
             {
@@ -150,7 +164,7 @@ namespace SharpCommerce
             // Serving static file for modules
             foreach (var module in modules)
             {
-                var wwwrootDir = new DirectoryInfo(Path.Combine(module.Path, "wwwroot"));
+                var wwwrootDir = new DirectoryInfo(Path.Combine(module.Name, "wwwroot"));
                 if (!wwwrootDir.Exists)
                 {
                     continue;

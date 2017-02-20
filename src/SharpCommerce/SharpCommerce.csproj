@@ -4,13 +4,13 @@
     <Description>SharpCommerce</Description>
     <Copyright>EyeCoding</Copyright>
     <AssemblyTitle>SharpCommerce</AssemblyTitle>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>SharpCommerce</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>SharpCommerce</PackageId>
     <UserSecretsId>aspnet-SharpCommerce-ecd1a4f7-1de0-468a-8065-ab902c7aae9b</UserSecretsId>
-    <RuntimeFrameworkVersion>1.0.3</RuntimeFrameworkVersion>
+    <RuntimeFrameworkVersion>1.1.0</RuntimeFrameworkVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
@@ -18,17 +18,13 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <PreBuildEvent></PreBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Update="wwwroot\**\*;**\*.cshtml;appsettings.json;web.config">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Core\SharpCommerce.Core\SharpCommerce.Core.csproj" />
-    <ProjectReference Include="..\Core\SharpCommerce.Core.Contracts\SharpCommerce.Core.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,6 +74,11 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0-msbuild3-final" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0-msbuild3-final" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0-msbuild3-final" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SharpCommerce.Core.Contracts\SharpCommerce.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\SharpCommerce.Core\SharpCommerce.Core.csproj" />
   </ItemGroup>
 
 </Project>
